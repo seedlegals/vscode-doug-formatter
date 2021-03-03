@@ -1,14 +1,16 @@
-# VS Code PUG formatter 
+# VS Code Doug formatter 
 
-This plugin adds syntax highlighting for Pug template files in VS Code. 
+This plugin adds syntax highlighting for Doug template files in VS Code. 
 
 It supports the vue syntax and HTML DOM events.
 
 # Based on:
-1) vscode-formatter-sample (https://github.com/jrieken/vscode-formatter-sample)
-2) vetur (https://github.com/vuejs/vetur)
-3) vscode-angular-pug (https://github.com/ghaschel/vscode-angular-pug)
+1) vscode-pug-formatter (https://github.com/alexbabichev/vscode-pug-formatter)
+2) vscode-formatter-sample (https://github.com/jrieken/vscode-formatter-sample)
+3) vetur (https://github.com/vuejs/vetur)
+4) vscode-angular-pug (https://github.com/ghaschel/vscode-angular-pug)
 
 # License
 
-MIT © Alex Babichev
+MIT
+Original work © 2019 Alex Babichev  
