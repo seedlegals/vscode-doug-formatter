@@ -836,8 +836,8 @@
 			]
 		},
 		"interpolated_value": {
-			"begin": "(?<!\\\\)[#!]\\{(?=.*?\\})",
-			"end": "\\}",
+			"begin": "(?<!\\\\)\\{\\{(?=.*?\\}\\})",
+			"end": "\\}\\}",
 			"name": "string.interpolated.doug",
 			"patterns": [{
 					"match": "{",
