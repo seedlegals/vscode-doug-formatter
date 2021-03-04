@@ -1,11 +1,11 @@
 {
-    "name": "formatter-pug",
-    "displayName": "formatter-pug",
-    "description": "Syntax highlighting for Pug templates ",
+    "name": "formatter-doug",
+    "displayName": "formatter-doug",
+    "description": "Syntax highlighting for Doug templates",
     "version": "0.0.1",
-    "publisher": "alexbabichev",
-    "author": "Alex Babichev",
-    "homepage": "https://github.com/alexbabichev/vscode-pug-formatter#readme",
+    "publisher": "seedlegals",
+    "author": "SeedLegals Ltd",
+    "homepage": "https://github.com/seedlegals/vscode-doug-formatter#readme",
     "license": "MIT",
     "engines": {
         "vscode": "^1.6.0"
@@ -17,65 +17,77 @@
         "color": "#1e1e1e",
         "theme": "dark"
     },
-    "icon": "https://github.com/alexbabichev/vscode-pug-formatter/raw/master/assets/pug-logo_128x128.png",
+    "icon": "https://github.com/seedlegals/vscode-doug-formatter/raw/master/assets/pug-logo_128x128.png",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/alexbabichev/vscode-pug-formatter.git"
+        "url": "git+https://github.com/seedlegals/vscode-doug-formatter.git"
     },
     "bugs": {
-        "url": "https://github.com/alexbabichev/vscode-pug-formatter/issues"
+        "url": "https://github.com/seedlegals/vscode-doug-formatter/issues"
     },
     "activationEvents": [
-        "onLanguage:pug",
-        "onCommand:extension.format-pug"
+        "onLanguage:doug",
+        "onCommand:extension.format-doug"
     ],
     "main": "./out/src/extension",
     "contributes": {
-        "languages": [{
-            "id": "pug",
-            "aliases": [
-                "Pug"
-            ],
-            "extensions": [
-                ".pug"
-            ],
-            "configuration": "./languages/lang.json"
-        }],
-        "commands": [{
-            "command": "extension.format-pug",
-            "title": "Format Pug Files"
-        }],
-        "grammars": [{
-            "language": "pug",
-            "path": "./syntaxes/pug.tmLanguage.json",
-            "scopeName": "text.pug",
-            "embeddedLanguages": {
-                "text.html.basic": "html",
-                "source.js": "javascript",
-                "source.ts": "typescript"
+        "languages": [
+            {
+                "id": "doug",
+                "aliases": [
+                    "Doug"
+                ],
+                "extensions": [
+                    ".doug"
+                ],
+                "configuration": "./languages/lang.json"
             }
-        }],
+        ],
+        "commands": [
+            {
+                "command": "extension.format-doug",
+                "title": "Format Doug Files"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "doug",
+                "path": "./syntaxes/doug.tmLanguage.json",
+                "scopeName": "text.doug",
+                "embeddedLanguages": {
+                    "text.html.basic": "html",
+                    "source.js": "javascript",
+                    "source.ts": "typescript"
+                }
+            }
+        ],
         "configuration": {
             "type": "object",
-            "title": "Pug",
+            "title": "Doug",
             "properties": {
-                "pug.format.enable": {
+                "doug.format.enable": {
                     "type": "boolean",
                     "default": true,
                     "description": "Complete functions with their parameter signature."
                 },
-                "formatter-pug.fillTab": {
-                    "type": ["boolean", "null"],
+                "formatter-doug.fillTab": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
                     "default": null,
                     "description": "Indent with Tabs, if false, with spaces."
                 },
-                "formatter-pug.omitDiv": {
+                "formatter-doug.omitDiv": {
                     "type": "boolean",
                     "default": false,
                     "description": "Omit div tag when it has id or class."
                 },
-                "formatter-pug.tabSize": {
-                    "type": ["number", "null"],
+                "formatter-doug.tabSize": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
                     "default": 2,
                     "description": "When `fillTab` is false, fill `tabSize` spaces."
                 }
@@ -92,7 +104,10 @@
     },
     "devDependencies": {
         "@types/node": "*",
+        "ts-loader": "^8.0.17",
+        "typescript": "2.0.6",
         "vscode": "1.0.3",
-        "typescript": "2.0.6"
+        "webpack": "^5.24.3",
+        "webpack-cli": "^4.5.0"
     }
 }

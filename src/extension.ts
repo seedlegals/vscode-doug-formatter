@@ -16,7 +16,7 @@ function beautify(text: string, options) {
 }
 
 function getOptions(activeTextEditor: vscode.TextEditor) {
-    const editorConfig = <any>vscode.workspace.getConfiguration('formatter-pug');
+    const editorConfig = <any>vscode.workspace.getConfiguration('formatter-doug');
     const options = {
         fill_tab: editorConfig.fillTab || !activeTextEditor.options.insertSpaces,
         omit_div: editorConfig.omitDiv,
@@ -38,11 +38,11 @@ function getRange(document: vscode.TextDocument) {
 export function activate(context: vscode.ExtensionContext) {
 
     // 👎 formatter implemented as separate command
-    vscode.commands.registerCommand('extension.format-pug', () => {
+    vscode.commands.registerCommand('extension.format-doug', () => {
         const { activeTextEditor } = vscode.window;
         const { document } = activeTextEditor;
 
-        if (!activeTextEditor || activeTextEditor.document.languageId !== 'pug')
+        if (!activeTextEditor || activeTextEditor.document.languageId !== 'doug')
             return;
 
         const text = activeTextEditor.document.getText();
@@ -57,7 +57,7 @@ export function activate(context: vscode.ExtensionContext) {
     });
 
     // 👍 formatter implemented using API
-    vscode.languages.registerDocumentFormattingEditProvider({ scheme: 'file', language: 'pug' }, {
+    vscode.languages.registerDocumentFormattingEditProvider({ scheme: 'file', language: 'doug' }, {
         provideDocumentFormattingEdits(document: vscode.TextDocument): vscode.TextEdit[] {
             const { activeTextEditor } = vscode.window;
 

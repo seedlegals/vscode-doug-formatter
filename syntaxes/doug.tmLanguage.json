@@ -5,8 +5,8 @@
 		"Once accepted there, we are happy to receive an update request."
 	],
 	"version": "https://github.com/davidrios/pug-tmbundle/commit/e67e895f6fb64932aa122e471000fa55d826bff6",
-	"name": "Pug",
-	"scopeName": "text.pug",
+	"name": "Doug",
+	"scopeName": "text.doug",
 	"patterns": [{
 			"match": "^(!!!|doctype)(\\s*[a-zA-Z0-9-_]+)?",
 			"name": "meta.tag.sgml.doctype.html",
@@ -15,32 +15,32 @@
 		{
 			"begin": "^(\\s*)//-",
 			"end": "^(?!(\\1\\s)|\\s*$)",
-			"name": "comment.unbuffered.block.pug",
-			"comment": "Unbuffered (pug-only) comments."
+			"name": "comment.unbuffered.block.doug",
+			"comment": "Unbuffered (doug-only) comments."
 		},
 		{
 			"begin": "^(\\s*)//",
 			"end": "^(?!(\\1\\s)|\\s*$)",
-			"name": "string.comment.buffered.block.pug",
+			"name": "string.comment.buffered.block.doug",
 			"comment": "Buffered (html) comments.",
 			"patterns": [{
 				"captures": {
 					"1": {
-						"name": "invalid.illegal.comment.comment.block.pug"
+						"name": "invalid.illegal.comment.comment.block.doug"
 					}
 				},
 				"match": "^\\s*(//)(?!-)",
-				"name": "string.comment.buffered.block.pug",
+				"name": "string.comment.buffered.block.doug",
 				"comment": "Buffered comments inside buffered comments will generate invalid html."
 			}]
 		},
 		{
 			"begin": "<!--",
 			"end": "--\\s*>",
-			"name": "comment.unbuffered.block.pug",
+			"name": "comment.unbuffered.block.doug",
 			"patterns": [{
 				"match": "--",
-				"name": "invalid.illegal.comment.comment.block.pug"
+				"name": "invalid.illegal.comment.comment.block.doug"
 			}]
 		},
 		{
@@ -56,7 +56,7 @@
 			"begin": "^(\\s*)(script)((\\.$)|(?=[^\\n]*(text|application)/javascript.*\\.$))",
 			"beginCaptures": {
 				"2": {
-					"name": "entity.name.tag.pug"
+					"name": "entity.name.tag.doug"
 				}
 			},
 			"end": "^(?!(\\1\\s)|\\s*$)",
@@ -85,7 +85,7 @@
 			"begin": "^(\\s*)(style)((\\.$)|(?=[.#(].*\\.$))",
 			"beginCaptures": {
 				"2": {
-					"name": "entity.name.tag.pug"
+					"name": "entity.name.tag.doug"
 				}
 			},
 			"end": "^(?!(\\1\\s)|\\s*$)",
@@ -114,11 +114,11 @@
 			"begin": "^(\\s*):(sass)(?=\\(|$)",
 			"beginCaptures": {
 				"2": {
-					"name": "constant.language.name.sass.filter.pug"
+					"name": "constant.language.name.sass.filter.doug"
 				}
 			},
 			"end": "^(?!(\\1\\s)|\\s*$)",
-			"name": "source.sass.filter.pug",
+			"name": "source.sass.filter.doug",
 			"patterns": [{
 					"include": "#tag_attributes"
 				},
@@ -131,11 +131,11 @@
 			"begin": "^(\\s*):(less)(?=\\(|$)",
 			"beginCaptures": {
 				"2": {
-					"name": "constant.language.name.less.filter.pug"
+					"name": "constant.language.name.less.filter.doug"
 				}
 			},
 			"end": "^(?!(\\1\\s)|\\s*$)",
-			"name": "source.less.filter.pug",
+			"name": "source.less.filter.doug",
 			"patterns": [{
 					"include": "#tag_attributes"
 				},
@@ -148,7 +148,7 @@
 			"begin": "^(\\s*):(stylus)(?=\\(|$)",
 			"beginCaptures": {
 				"2": {
-					"name": "constant.language.name.stylus.filter.pug"
+					"name": "constant.language.name.stylus.filter.doug"
 				}
 			},
 			"end": "^(?!(\\1\\s)|\\s*$)",
@@ -164,11 +164,11 @@
 			"begin": "^(\\s*):(coffee(-?script)?)(?=\\(|$)",
 			"beginCaptures": {
 				"2": {
-					"name": "constant.language.name.coffeescript.filter.pug"
+					"name": "constant.language.name.coffeescript.filter.doug"
 				}
 			},
 			"end": "^(?!(\\1\\s)|\\s*$)",
-			"name": "source.coffeescript.filter.pug",
+			"name": "source.coffeescript.filter.doug",
 			"patterns": [{
 					"include": "#tag_attributes"
 				},
@@ -181,29 +181,29 @@
 			"begin": "^(\\s*)((:(?=.))|(:$))",
 			"beginCaptures": {
 				"4": {
-					"name": "invalid.illegal.empty.generic.filter.pug"
+					"name": "invalid.illegal.empty.generic.filter.doug"
 				}
 			},
 			"end": "^(?!(\\1\\s)|\\s*$)",
-			"comment": "Generic Pug filter.",
+			"comment": "Generic Doug filter.",
 			"patterns": [{
 				"begin": "\\G(?<=:)(?=.)",
 				"end": "$",
-				"name": "name.generic.filter.pug",
+				"name": "name.generic.filter.doug",
 				"patterns": [{
 						"match": "\\G\\(",
-						"name": "invalid.illegal.name.generic.filter.pug"
+						"name": "invalid.illegal.name.generic.filter.doug"
 					},
 					{
 						"match": "[\\w-]",
-						"name": "constant.language.name.generic.filter.pug"
+						"name": "constant.language.name.generic.filter.doug"
 					},
 					{
 						"include": "#tag_attributes"
 					},
 					{
 						"match": "\\W",
-						"name": "invalid.illegal.name.generic.filter.pug"
+						"name": "invalid.illegal.name.generic.filter.doug"
 					}
 				]
 			}]
@@ -212,13 +212,13 @@
 			"begin": "^(\\s*)(?=[\\w.#].*?\\.$)(?=(?:(?:(?:(?:(?:#[\\w-]+)|(?:\\.[\\w-]+))|(?:(?:[#!]\\{[^}]*\\})|(?:\\w(?:(?:[\\w:-]+[\\w-])|(?:[\\w-]*)))))(?:(?:#[\\w-]+)|(?:\\.[\\w-]+)|(?:\\((?:[^()\\'\\\"]*(?:(?:\\'(?:[^\\']|(?:(?<!\\\\)\\\\\\'))*\\')|(?:\\\"(?:[^\\\"]|(?:(?<!\\\\)\\\\\\\"))*\\\")))*[^()]*\\))*)*)(?:(?:(?::\\s+)|(?<=\\)))(?:(?:(?:(?:#[\\w-]+)|(?:\\.[\\w-]+))|(?:(?:[#!]\\{[^}]*\\})|(?:\\w(?:(?:[\\w:-]+[\\w-])|(?:[\\w-]*)))))(?:(?:#[\\w-]+)|(?:\\.[\\w-]+)|(?:\\((?:[^()\\'\\\"]*(?:(?:\\'(?:[^\\']|(?:(?<!\\\\)\\\\\\'))*\\')|(?:\\\"(?:[^\\\"]|(?:(?<!\\\\)\\\\\\\"))*\\\")))*[^()]*\\))*)*))*)\\.$)(?:(?:(#[\\w-]+)|(\\.[\\w-]+))|((?:[#!]\\{[^}]*\\})|(?:\\w(?:(?:[\\w:-]+[\\w-])|(?:[\\w-]*)))))",
 			"beginCaptures": {
 				"2": {
-					"name": "entity.other.attribute-name.id.pug"
+					"name": "entity.other.attribute-name.id.doug"
 				},
 				"3": {
-					"name": "entity.other.attribute-name.class.pug"
+					"name": "entity.other.attribute-name.class.doug"
 				},
 				"4": {
-					"name": "meta.tag.other entity.name.tag.pug"
+					"name": "meta.tag.other entity.name.tag.doug"
 				}
 			},
 			"end": "^(?!(\\1\\s)|\\s*$)",
@@ -232,9 +232,9 @@
 				{
 					"begin": "^(?=.)",
 					"end": "$",
-					"name": "text.block.pug",
+					"name": "text.block.doug",
 					"patterns": [{
-							"include": "#inline_pug"
+							"include": "#inline_doug"
 						},
 						{
 							"include": "#embedded_html"
@@ -260,7 +260,7 @@
 			"end": "$",
 			"comment": "All constructs that generally span a single line starting with any number of white-spaces.",
 			"patterns": [{
-					"include": "#inline_pug"
+					"include": "#inline_doug"
 				},
 				{
 					"include": "#blocks_and_includes"
@@ -283,10 +283,10 @@
 				{
 					"begin": "\\|",
 					"end": "$",
-					"name": "text.block.pipe.pug",
+					"name": "text.block.pipe.doug",
 					"comment": "Tag pipe text line.",
 					"patterns": [{
-							"include": "#inline_pug"
+							"include": "#inline_doug"
 						},
 						{
 							"include": "#embedded_html"
@@ -316,7 +316,7 @@
 							"begin": "</?(?=[!#])",
 							"end": ">|$",
 							"patterns": [{
-									"include": "#inline_pug"
+									"include": "#inline_doug"
 								},
 								{
 									"include": "#interpolated_value"
@@ -330,7 +330,7 @@
 							]
 						},
 						{
-							"include": "#inline_pug"
+							"include": "#inline_doug"
 						},
 						{
 							"include": "#embedded_html"
@@ -365,21 +365,21 @@
 		"blocks_and_includes": {
 			"captures": {
 				"1": {
-					"name": "storage.type.import.include.pug"
+					"name": "storage.type.import.include.doug"
 				},
 				"4": {
-					"name": "variable.control.import.include.pug"
+					"name": "variable.control.import.include.doug"
 				}
 			},
 			"match": "(extends|include|yield|append|prepend|block( (append|prepend))?)\\s+(.*)$",
-			"name": "meta.first-class.pug",
+			"name": "meta.first-class.doug",
 			"comment": "Template blocks and includes."
 		},
 		"unbuffered_code": {
 			"begin": "(-|(([a-zA-Z0-9_]+)\\s+=))",
 			"beginCaptures": {
 				"3": {
-					"name": "variable.parameter.javascript.embedded.pug"
+					"name": "variable.parameter.javascript.embedded.doug"
 				}
 			},
 			"end": "(?=\\])|(({\\s*)?$)",
@@ -400,10 +400,10 @@
 			"match": "(mixin\\s+)([\\w-]+)(?:(\\()\\s*((?:[a-zA-Z_]\\w*\\s*)(?:,\\s*[a-zA-Z_]\\w*\\s*)*)(\\)))?$",
 			"captures": {
 				"1": {
-					"name": "storage.type.function.pug"
+					"name": "storage.type.function.doug"
 				},
 				"2": {
-					"name": "meta.tag.other entity.name.function.pug"
+					"name": "meta.tag.other entity.name.function.doug"
 				},
 				"3": {
 					"name": "punctuation.definition.parameters.begin.js"
@@ -420,17 +420,17 @@
 			"begin": "((?:mixin\\s+)|\\+)([\\w-]+)",
 			"beginCaptures": {
 				"1": {
-					"name": "storage.type.function.pug"
+					"name": "storage.type.function.doug"
 				},
 				"2": {
-					"name": "meta.tag.other entity.name.function.pug"
+					"name": "meta.tag.other entity.name.function.doug"
 				}
 			},
 			"end": "(?!\\()|$",
 			"patterns": [{
 					"begin": "(?<!\\))\\(",
 					"end": "\\)",
-					"name": "args.mixin.pug",
+					"name": "args.mixin.doug",
 					"patterns": [{
 							"include": "#js_parens"
 						},
@@ -441,7 +441,7 @@
 							"match": "([^\\s(),=/]+)\\s*=\\s*",
 							"captures": {
 								"1": {
-									"name": "meta.tag.other entity.other.attribute-name.tag.pug"
+									"name": "meta.tag.other entity.other.attribute-name.tag.doug"
 								}
 							}
 						},
@@ -459,16 +459,16 @@
 			"begin": "(for|if|else if|else|each|until|while|unless|case)(\\s+|$)",
 			"captures": {
 				"1": {
-					"name": "storage.type.function.pug"
+					"name": "storage.type.function.doug"
 				}
 			},
 			"end": "$",
-			"name": "meta.control.flow.pug",
-			"comment": "Pug control flow.",
+			"name": "meta.control.flow.doug",
+			"comment": "Doug control flow.",
 			"patterns": [{
 				"begin": "",
 				"end": "$",
-				"name": "js.embedded.control.flow.pug",
+				"name": "js.embedded.control.flow.doug",
 				"patterns": [{
 					"include": "source.js"
 				}]
@@ -477,13 +477,13 @@
 		"case_when_paren": {
 			"begin": "\\(",
 			"end": "\\)",
-			"name": "js.when.control.flow.pug",
+			"name": "js.when.control.flow.doug",
 			"patterns": [{
 					"include": "#case_when_paren"
 				},
 				{
 					"match": ":",
-					"name": "invalid.illegal.name.tag.pug"
+					"name": "invalid.illegal.name.tag.doug"
 				},
 				{
 					"include": "source.js"
@@ -494,16 +494,16 @@
 			"begin": "(default|when)((\\s+|(?=:))|$)",
 			"captures": {
 				"1": {
-					"name": "storage.type.function.pug"
+					"name": "storage.type.function.doug"
 				}
 			},
 			"end": "$",
-			"name": "meta.control.flow.pug",
-			"comment": "Pug case conditionals.",
+			"name": "meta.control.flow.doug",
+			"comment": "Doug case conditionals.",
 			"patterns": [{
 					"begin": "\\G(?!:)",
 					"end": "(?=:\\s+)|$",
-					"name": "js.embedded.control.flow.pug",
+					"name": "js.embedded.control.flow.doug",
 					"patterns": [{
 							"include": "#case_when_paren"
 						},
@@ -515,7 +515,7 @@
 				{
 					"begin": ":\\s+",
 					"end": "$",
-					"name": "tag.case.control.flow.pug",
+					"name": "tag.case.control.flow.doug",
 					"patterns": [{
 						"include": "#complete_tag"
 					}]
@@ -539,7 +539,7 @@
 				},
 				{
 					"match": "(?<=:)\\w.*$",
-					"name": "invalid.illegal.name.tag.pug"
+					"name": "invalid.illegal.name.tag.doug"
 				},
 				{
 					"include": "#tag_name"
@@ -560,10 +560,10 @@
 					"match": "((\\.)\\s+$)|((:)\\s*$)",
 					"captures": {
 						"2": {
-							"name": "invalid.illegal.end.tag.pug"
+							"name": "invalid.illegal.end.tag.doug"
 						},
 						"4": {
-							"name": "invalid.illegal.end.tag.pug"
+							"name": "invalid.illegal.end.tag.doug"
 						}
 					}
 				},
@@ -578,14 +578,14 @@
 		"tag_name": {
 			"begin": "([#!]\\{(?=.*?\\}))|(\\w(([\\w:-]+[\\w-])|([\\w-]*)))",
 			"end": "(\\G(?<!\\5[^\\w-]))|\\}|$",
-			"name": "meta.tag.other entity.name.tag.pug",
+			"name": "meta.tag.other entity.name.tag.doug",
 			"patterns": [{
 				"begin": "\\G(?<=\\{)",
 				"end": "(?=\\})",
-				"name": "meta.tag.other entity.name.tag.pug",
+				"name": "meta.tag.other entity.name.tag.doug",
 				"patterns": [{
 						"match": "{",
-						"name": "invalid.illegal.tag.pug"
+						"name": "invalid.illegal.tag.doug"
 					},
 					{
 						"include": "source.js"
@@ -595,22 +595,22 @@
 		},
 		"tag_id": {
 			"match": "#[\\w-]+",
-			"name": "entity.other.attribute-name.id.pug"
+			"name": "entity.other.attribute-name.id.doug"
 		},
 		"tag_classes": {
 			"match": "\\.([^\\w-])?[\\w-]*",
 			"captures": {
 				"1": {
-					"name": "invalid.illegal.tag.pug"
+					"name": "invalid.illegal.tag.doug"
 				}
 			},
-			"name": "entity.other.attribute-name.class.pug"
+			"name": "entity.other.attribute-name.class.doug"
 		},
 		"tag_attributes": {
 			"begin": "(\\(\\s*)",
 			"captures": {
 				"1": {
-					"name": "constant.name.attribute.tag.pug"
+					"name": "constant.name.attribute.tag.doug"
 				}
 			},
 			"end": "(\\))",
@@ -626,7 +626,7 @@
 				},
 				{
 					"match": "!(?!=)",
-					"name": "invalid.illegal.tag.pug"
+					"name": "invalid.illegal.tag.doug"
 				},
 				{
 					"begin": "=\\s*",
@@ -676,14 +676,14 @@
 			"match": "([^\\s(),=/!]+)\\s*",
 			"captures": {
 				"1": {
-					"name": "entity.other.attribute-name.tag.pug"
+					"name": "entity.other.attribute-name.tag.doug"
 				}
 			}
 		},
 		"tag_attribute_name_paren": {
 			"begin": "\\(\\s*",
 			"end": "\\)",
-			"name": "entity.other.attribute-name.tag.pug",
+			"name": "entity.other.attribute-name.tag.doug",
 			"patterns": [{
 					"include": "#tag_attribute_name_paren"
 				},
@@ -696,14 +696,14 @@
 			"begin": "(&attributes\\()",
 			"captures": {
 				"1": {
-					"name": "entity.name.function.pug"
+					"name": "entity.name.function.doug"
 				}
 			},
 			"end": "(\\))",
 			"name": "meta.tag.other",
 			"patterns": [{
 					"match": "attributes(?=\\))",
-					"name": "storage.type.keyword.pug"
+					"name": "storage.type.keyword.doug"
 				},
 				{
 					"include": "source.js"
@@ -714,7 +714,7 @@
 			"begin": "(?=.)",
 			"end": "$",
 			"patterns": [{
-					"include": "#inline_pug"
+					"include": "#inline_doug"
 				},
 				{
 					"include": "#embedded_html"
@@ -733,18 +733,18 @@
 				}
 			]
 		},
-		"inline_pug_text": {
+		"inline_doug_text": {
 			"begin": "",
 			"end": "(?=\\])",
 			"patterns": [{
 					"begin": "\\[",
 					"end": "\\]",
 					"patterns": [{
-						"include": "#inline_pug_text"
+						"include": "#inline_doug_text"
 					}]
 				},
 				{
-					"include": "#inline_pug"
+					"include": "#inline_doug"
 				},
 				{
 					"include": "#embedded_html"
@@ -763,20 +763,20 @@
 				}
 			]
 		},
-		"inline_pug": {
+		"inline_doug": {
 			"begin": "(?<!\\\\)(#\\[)",
 			"captures": {
 				"1": {
-					"name": "entity.name.function.pug"
+					"name": "entity.name.function.doug"
 				},
 				"2": {
-					"name": "entity.name.function.pug"
+					"name": "entity.name.function.doug"
 				}
 			},
 			"end": "(\\])",
-			"name": "inline.pug",
+			"name": "inline.doug",
 			"patterns": [{
-					"include": "#inline_pug"
+					"include": "#inline_doug"
 				},
 				{
 					"include": "#mixin_call"
@@ -784,7 +784,7 @@
 				{
 					"begin": "(?<!\\])(?=[\\w.#])|(:\\s*)",
 					"end": "(?=\\]|(:.)|=|\\s)",
-					"name": "tag.inline.pug",
+					"name": "tag.inline.doug",
 					"patterns": [{
 							"include": "#tag_name"
 						},
@@ -801,11 +801,11 @@
 							"include": "#tag_mixin_attributes"
 						},
 						{
-							"include": "#inline_pug"
+							"include": "#inline_doug"
 						},
 						{
 							"match": "\\[",
-							"name": "invalid.illegal.tag.pug"
+							"name": "invalid.illegal.tag.doug"
 						}
 					]
 				},
@@ -817,31 +817,31 @@
 				},
 				{
 					"match": "\\[",
-					"name": "invalid.illegal.tag.pug"
+					"name": "invalid.illegal.tag.doug"
 				},
 				{
-					"include": "#inline_pug_text"
+					"include": "#inline_doug_text"
 				}
 			]
 		},
 		"html_entity": {
 			"patterns": [{
 					"match": "(&)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)(;)",
-					"name": "constant.character.entity.html.text.pug"
+					"name": "constant.character.entity.html.text.doug"
 				},
 				{
 					"match": "[<>&]",
-					"name": "invalid.illegal.html_entity.text.pug"
+					"name": "invalid.illegal.html_entity.text.doug"
 				}
 			]
 		},
 		"interpolated_value": {
 			"begin": "(?<!\\\\)[#!]\\{(?=.*?\\})",
 			"end": "\\}",
-			"name": "string.interpolated.pug",
+			"name": "string.interpolated.doug",
 			"patterns": [{
 					"match": "{",
-					"name": "invalid.illegal.tag.pug"
+					"name": "invalid.illegal.tag.doug"
 				},
 				{
 					"include": "source.js"
@@ -850,7 +850,7 @@
 		},
 		"interpolated_error": {
 			"match": "(?<!\\\\)[#!]\\{(?=[^}]*$)",
-			"name": "invalid.illegal.tag.pug"
+			"name": "invalid.illegal.tag.doug"
 		},
 		"printed_expression": {
 			"begin": "(!?\\=)\\s*",
@@ -872,10 +872,10 @@
 		"string": {
 			"begin": "(['\"])",
 			"end": "(?<!\\\\)\\1",
-			"name": "string.quoted.pug",
+			"name": "string.quoted.doug",
 			"patterns": [{
 					"match": "\\\\((x[0-9a-fA-F]{2})|(u[0-9]{4})|.)",
-					"name": "constant.character.quoted.pug"
+					"name": "constant.character.quoted.doug"
 				},
 				{
 					"include": "#interpolated_value"
